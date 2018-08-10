@@ -18,14 +18,15 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
-    "react": "^16.4.2",
-    "react-dom": "^16.4.2",
-    "react-scripts": "1.1.4",
     "body-parser": "^1.13.3",
     "compression": "^1.5.2",
     "cors": "^2.7.1",
     "express": "^4.13.3",
+    "fs": "^0.0.1-security",
     "morgan": "^1.8.0",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-scripts": "1.1.4",
     "resource-router-middleware": "^0.6.0"
   },
   "devDependencies": {
