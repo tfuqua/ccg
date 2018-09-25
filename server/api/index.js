@@ -18,28 +18,22 @@ export default ({ config }) => {
   api.get('/test', (req, res) => {
     //const file = fs.readdir(path.join(__dirname, '../scripts/test.ps1'));
 
-    fs.readFile(path.join(__dirname, '../scripts/test.ps1'), (err, file) => {
-      if (err) {
-        console.log(err);
-      }
+    let spawn = require('child_process').spawn,
+      child;
 
-      console.log(file);
-      let spawn = require('child_process').spawn,
-        child;
+    child = spawn('pwsh', [path.join(__dirname, '../scripts/test.ps1')]);
 
-      child = spawn('powershell.exe', [file]);
-
-      child.stdout.on('data', function(data) {
-        console.log('Powershell Data: ' + data);
-      });
-      child.stderr.on('data', function(data) {
-        console.log('Powershell Errors: ' + data);
-      });
-      child.on('exit', function() {
-        console.log('Powershell Script finished');
-      });
-      child.stdin.end(); //end input
+    child.stdout.on('data', function(data) {
+      console.log('Powershell Data: ' + data);
     });
+    child.stderr.on('error', function(data) {
+      console.log('Powershell Errors: ' + data);
+    });
+    child.on('exit', function() {
+      console.log('Powershell Script finished');
+      res.send('Powershell script finished');
+    });
+    child.stdin.end(); //end input
   });
 
   return api;
