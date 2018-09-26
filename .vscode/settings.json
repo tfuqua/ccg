@@ -1,0 +1,28 @@
+{
+  // Place your settings in this file to overwrite default and user settings.
+  "files.exclude": {
+    "node_modules/": true,
+    "flow-coverage": true
+    //"build/" : true,
+    //"scripts": true
+  },
+  "search.exclude": {
+    "**/.git": true,
+    "**/node_modules": true,
+    "**/build": true,
+    ".vscode/chrome": true
+  },
+  // Controls if quick suggestions should show up while typing
+  "editor.quickSuggestions": true,
+  // Controls if suggestions should be accepted with "Enter" - in addition to "Tab". Helps to avoid ambiguity between inserting new lines and accepting suggestions.
+  "editor.acceptSuggestionOnEnter": "smart",
+  // Controls the delay in ms after which quick suggestions will show up.
+  "editor.quickSuggestionsDelay": 3,
+  // Enable word based suggestions
+  "editor.wordBasedSuggestions": true,
+  "editor.formatOnSave": true,
+  "prettier.singleQuote": true,
+  "prettier.printWidth": 120,
+  "prettier.jsxBracketSameLine": true,
+  "javascript.validate.enable": false
+}
